@@ -1,4 +1,4 @@
-import { Container, Heading, Text } from "@chakra-ui/react";
+import { Container, Heading, ListItem, UnorderedList } from "@chakra-ui/react";
 import { awards } from "../_data/awards";
 
 export const Award = () => {
@@ -7,9 +7,11 @@ export const Award = () => {
       <Heading py={2} textAlign="center">
         Award
       </Heading>
-      {awards.map((award) => (
-        <Text key={award}>{award}</Text>
-      ))}
+      <UnorderedList>
+        {awards.map((award) => (
+          <ListItem key={award}>{award}</ListItem>
+        ))}
+      </UnorderedList>
     </Container>
   );
 };
