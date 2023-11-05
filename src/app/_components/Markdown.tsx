@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   Code,
@@ -9,14 +7,12 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import React from "react";
+import { JSDOM } from "jsdom";
 
 export const Markdown = ({ html }: { html: string }) => {
   console.log(html);
-  const doc = new DOMParser().parseFromString(
-    html,
-    "text/html"
-  ).documentElement;
-  return dfs(doc);
+  const doc = new JSDOM(html).window.document.getElementsByTagName("html");
+  return dfs(doc[0]);
 };
 
 const dfs = (elem: ChildNode, key?: number): JSX.Element => {
