@@ -1,34 +1,31 @@
-import { format, parseISO } from "date-fns";
-import { allPosts } from "contentlayer/generated";
 import { Container } from "@chakra-ui/react";
-import { Markdown } from "@/app/_components/Markdown";
+import { allPosts } from "contentlayer/generated";
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { notFound } from "next/navigation";
+import "../../../styles/markdown.css";
 
-export const generateStaticParams = async () =>
-  allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
+export async function generateStaticParams() {
+  return allPosts.map((post) => ({
+    slug: post._raw.flattenedPath,
+  }));
+}
 
-export const generateMetadata = ({ params }: { params: { slug: string } }) => {
+export default function Page({ params }: { params: { slug: string } }) {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
-  return { title: post.title };
-};
 
-const PostLayout = ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
+  if (!post) notFound();
+
+  const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <Container maxW="800px">
-      <article className="mx-auto max-w-xl py-8">
-        <div className="mb-8 text-center">
-          <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
-            {format(parseISO(post.date), "LLLL d, yyyy")}
-          </time>
-          <h1 className="text-3xl font-bold">{post.title}</h1>
-        </div>
-        <Markdown html={post.body.html} />
-      </article>
+    <Container maxW="900px">
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
+        crossOrigin="anonymous"
+      />
+      <MDXContent />
     </Container>
   );
-};
-
-export default PostLayout;
+}

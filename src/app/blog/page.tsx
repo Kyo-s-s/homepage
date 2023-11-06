@@ -18,7 +18,8 @@ function PostCard(post: Post) {
       </time>
       <div
         className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0"
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
+        // dangerouslySetInnerHTML={{ __html: post.body.html }}
+        dangerouslySetInnerHTML={{ __html: post.body.code }}
       />
     </div>
   );
