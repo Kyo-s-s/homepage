@@ -1,12 +1,11 @@
-import { ReactNode } from "react";
 import { Box, Container } from "@chakra-ui/react";
 import { allPosts } from "contentlayer/generated";
 import type { MDXComponents } from "mdx/types";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { notFound } from "next/navigation";
-import "../../../styles/markdown.css";
 import Pre from "@/app/_components/blog/Pre";
-import { LinkHeading } from "@/app/_components/blog/LinkHeading";
+import LinkHeading from "@/app/_components/blog/LinkHeading";
+import "../../../styles/markdown.css";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
