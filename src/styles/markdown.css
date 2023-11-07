@@ -21,3 +21,49 @@ h5 {
 h6 {
   font-size: 1.4em;
 }
+
+li {
+  margin-left: 1.5em;
+}
+
+code,
+code-line {
+  color: #f7fcfe;
+  background-color: #2b2b2b;
+}
+
+pre {
+  margin: 0.5em 0em;
+  padding: 0.5em;
+  background-color: #2b2b2b;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+blockquote {
+  margin: 0.5em 0em;
+  padding: 0.5em;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: azure;
+  border-left: 2px solid black;
+}
+
+.token.string {
+  color: #f8e58c;
+}
+
+.token.keyword {
+  color: #e198b4;
+}
+
+.token.function {
+  color: #89c3eb;
+}
+
+.token.operator {
+  color: #88cb7f;
+}
+
+.token.comment {
+  color: #95859c;
+}
