@@ -38,6 +38,7 @@ pre {
   background-color: #2b2b2b;
   overflow-x: auto;
   border-radius: 4px;
+  position: relative;
 }
 
 blockquote {
