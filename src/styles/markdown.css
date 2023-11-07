@@ -68,3 +68,11 @@ blockquote {
 .token.comment {
   color: #95859c;
 }
+
+.link-heading .link-icon {
+  visibility: hidden;
+}
+
+.link-heading:hover .link-icon {
+  visibility: visible;
+}
