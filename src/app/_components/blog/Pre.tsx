@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
-import { Button } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 
 interface PreProps {
   children: ReactNode;
@@ -19,8 +19,8 @@ const Pre = ({ children, raw, ...props }: PreProps) => {
   };
 
   return (
-    <>
-      <pre {...props}>
+    <Box position="relative">
+      <Box as="pre" {...props}>
         <Button
           size="sm"
           top="0.5em"
@@ -31,8 +31,8 @@ const Pre = ({ children, raw, ...props }: PreProps) => {
           {isCopied ? "Copied!" : "Copy"}
         </Button>
         {children}
-      </pre>
-    </>
+      </Box>
+    </Box>
   );
 };
 
