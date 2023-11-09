@@ -17,6 +17,8 @@ import {
   VStack,
   Container,
   Button,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -32,7 +34,10 @@ const Header = () => {
     <>
       <Container maxW="1200px" h="auto" px={0}>
         <Flex justify="space-between" p={4}>
-          <Heading size="xl">Kyo_s_s Homepage</Heading>
+          <LinkBox>
+            <LinkOverlay href="/" />
+            <Heading size="xl">Kyo_s_s Homepage</Heading>
+          </LinkBox>
           <Box display={{ base: "block", md: "none" }}>
             <IconButton
               aria-label="Open Menu"
