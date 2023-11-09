@@ -1,4 +1,4 @@
-import { Container, Heading } from "@chakra-ui/react";
+import { Box, Container, Heading } from "@chakra-ui/react";
 import { constants } from "../_data/constants";
 import { ReactNode } from "react";
 
@@ -10,9 +10,11 @@ const HomeCard = ({
   children: ReactNode;
 }) => {
   return (
-    <Container my={2} maxW={constants.maxW}>
-      <Heading textAlign="center">{title}</Heading>
-      {children}
+    <Container maxW={constants.maxW}>
+      <Heading py={2}>{title}</Heading>
+      <Box px={4} py={2}>
+        {children}
+      </Box>
     </Container>
   );
 };

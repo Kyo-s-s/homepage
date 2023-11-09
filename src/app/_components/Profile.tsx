@@ -10,7 +10,7 @@ const Profile = () => {
           md: "repeat(3, 1fr)",
         }}
         gap={8}
-        px={8}
+        px={{ base: 0, md: 8 }}
       >
         <GridItem>
           <Box h="100%">

@@ -1,3 +1,3 @@
 export class constants {
-  static readonly maxW = "1200px";
+  static readonly maxW = "1100px";
 }
