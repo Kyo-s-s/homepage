@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Header } from "./_components/Header";
+import Header from "./_components/Header";
 import theme from "@/styles/theme";
 
 export const metadata: Metadata = {
