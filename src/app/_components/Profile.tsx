@@ -1,20 +1,9 @@
-import {
-  Box,
-  Center,
-  Container,
-  Grid,
-  GridItem,
-  Heading,
-  Image,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Center, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import HomeCard from "./HomeCard";
 
-export const Profile = () => {
+const Profile = () => {
   return (
-    <Container maxW="1200px">
-      <Heading py={2} textAlign="center">
-        Profile
-      </Heading>
+    <HomeCard title="Profile">
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
@@ -42,6 +31,8 @@ export const Profile = () => {
           </Box>
         </GridItem>
       </Grid>
-    </Container>
+    </HomeCard>
   );
 };
+
+export default Profile;

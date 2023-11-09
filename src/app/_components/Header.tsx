@@ -25,7 +25,7 @@ const pages = [
   { title: "Blog", path: "/blog" },
 ];
 
-export const Header = () => {
+const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -71,3 +71,5 @@ export const Header = () => {
     </>
   );
 };
+
+export default Header;
