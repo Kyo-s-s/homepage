@@ -1,13 +1,4 @@
-import {
-  Box,
-  Container,
-  Flex,
-  Grid,
-  Heading,
-  LinkBox,
-  LinkOverlay,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Grid, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import HomeCard from "./HomeCard";
 import { contacts } from "../_data/contacts";
 import { IconType } from "react-icons";
@@ -15,12 +6,12 @@ import { IconType } from "react-icons";
 const Item = ({
   contact,
 }: {
-  contact: { platform: string; username: string; link: string; icon: IconType };
+  contact: { platform: string; username: string; url: string; icon: IconType };
 }) => {
-  const { platform, username, link } = contact;
+  const { platform, username, url } = contact;
   return (
     <LinkBox>
-      <LinkOverlay href={link} />
+      <LinkOverlay href={url} />
       <Flex px={8} py={2} gap={6} align="center">
         <contact.icon size="3.2em" />
         <Box>
