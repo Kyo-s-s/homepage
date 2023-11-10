@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <>
       <Profile />
-      <Award />
       <Affiliation />
+      <Award />
       <Contact />
     </>
   );
