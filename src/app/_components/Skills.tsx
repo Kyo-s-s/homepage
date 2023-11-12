@@ -25,6 +25,23 @@ const Skill = ({ title, children }: { title: string; children: ReactNode }) => {
   );
 };
 
+const Rate = ({ value }: { value: number }) => {
+  const colorMap: { [key: number]: string } = {
+    0: "black",
+    400: "gray",
+    800: "green",
+    1200: "cyan",
+    1600: "#0000ff",
+    2000: "#C0C000",
+  };
+  const color = colorMap[value - (value % 400)] || "black";
+  return (
+    <Text as="span" color={color}>
+      {value}
+    </Text>
+  );
+};
+
 const Skills = async () => {
   const algo = await getAtCoderRate("algo");
   const heur = await getAtCoderRate("heuristic");
@@ -39,8 +56,9 @@ const Skills = async () => {
     <HomeCard title="Skills">
       <Skill title="AtCoder">
         <Text>
-          Algorithm: {algoNowRate} (Max: {algoMaxRate}) / Heuristic:{" "}
-          {heurNowRate}
+          Algorithm: <Rate value={algoNowRate} /> (Max:{" "}
+          <Rate value={algoMaxRate} />) / Heuristic:{" "}
+          <Rate value={heurNowRate} />
         </Text>
       </Skill>
       <Skill title="Language">
