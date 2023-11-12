@@ -36,7 +36,7 @@ const Rate = ({ value }: { value: number }) => {
   };
   const color = colorMap[value - (value % 400)] || "black";
   return (
-    <Text as="span" color={color}>
+    <Text as="b" color={color}>
       {value}
     </Text>
   );
