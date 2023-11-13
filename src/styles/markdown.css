@@ -2,13 +2,13 @@ li {
   margin-left: 1.5em;
 }
 
-code,
 code-line {
   color: #f7fcfe;
   background-color: #2b2b2b;
 }
 
 pre {
+  color: #f7fcfe;
   margin: 0.5em 0em;
   padding: 0.5em;
   background-color: #2b2b2b;

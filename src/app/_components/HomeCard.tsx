@@ -11,7 +11,7 @@ const HomeCard = ({
 }) => {
   return (
     <Container maxW={constants.maxW}>
-      <Heading py={2}>{title}</Heading>
+      <Heading>{title}</Heading>
       <Box px={4} py={2}>
         {children}
       </Box>
