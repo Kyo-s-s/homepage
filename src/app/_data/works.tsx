@@ -2,9 +2,14 @@ import { Text } from "@chakra-ui/react";
 
 export const works = [
   {
-    title: "Nasa",
+    title: "Moonquake Viewer",
     link: "https://nasa-hackathon-2023-yokohama.vercel.app",
-    comment: <Text>NASA Space Apps Challenge 2023 Yokohama 最優秀賞作品</Text>,
+    comment: (
+      <Text>
+        NASA Space Apps Challenge 2023 Yokohama 最優秀賞作品です。
+        月面上の地震データを可視化するWebアプリで、Next.jsを用いて作成しました。
+      </Text>
+      ),
   },
   {
     title: "Library",
@@ -23,7 +28,7 @@ export const works = [
     img: "sit-timetable.png",
     comment: (
       <Text>
-        履修登録の際に、時間割管理が簡単にできるサイトがあれば便利だなと思い、
+        履修登録の際に時間割管理が簡単にできるサイトがあれば便利だなと思い、
         Reactを用いて作成しました。
       </Text>
     ),
