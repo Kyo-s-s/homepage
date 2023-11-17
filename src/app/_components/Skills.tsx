@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Link, Text } from "@chakra-ui/react";
 import HomeCard from "./HomeCard";
 import { skills } from "../_data/skills";
 import { ReactNode } from "react";
@@ -56,9 +56,11 @@ const Skills = async () => {
     <HomeCard title="Skills">
       <Skill title="AtCoder">
         <Text>
-          Algorithm: <Rate value={algoNowRate} /> (Max:{" "}
-          <Rate value={algoMaxRate} />) / Heuristic:{" "}
-          <Rate value={heurNowRate} />
+          <Link href="https://atcoder.jp/users/Kyo_s_s?contestType=algo">Algorithm</Link>
+          : <Rate value={algoNowRate} /> (Max: <Rate value={algoMaxRate} />)
+          {" / "}  
+          <Link href="https://atcoder.jp/users/Kyo_s_s?contestType=heuristic">Heuristic</Link>
+          : <Rate value={heurNowRate} />
         </Text>
       </Skill>
       <Skill title="Language">
