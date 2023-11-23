@@ -1,45 +1,7 @@
-import {
-  Box,
-  Center,
-  Grid,
-  Heading,
-  Image,
-  Link,
-  Text,
-} from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 import HomeCard from "./HomeCard";
 import { works } from "../_data/works";
-import { ReactNode } from "react";
-
-const WorksCard = ({
-  work,
-}: {
-  work: {
-    title: string;
-    link?: string;
-    img?: string;
-    comment: ReactNode;
-    details?: ReactNode;
-  };
-}) => {
-  const { title, link, img, comment, details } = work;
-  return (
-    <Center>
-      <Box>
-        <Heading py={2} size="md">
-          {link ? <Link href={link}>{title}</Link> : title}
-        </Heading>
-        <Image
-          objectFit="cover"
-          src={img ?? "twitter_icon.png"}
-          aspectRatio="16/10"
-          alt="icon"
-        />
-        {comment && <Box>{comment}</Box>}
-      </Box>
-    </Center>
-  );
-};
+import WorksCard from "./WorksCard";
 
 const Works = () => {
   return (
