@@ -4,12 +4,13 @@ export const works = [
   {
     title: "Moonquake Viewer",
     link: "https://nasa-hackathon-2023-yokohama.vercel.app",
+    img: "moonquake_viewer.png",
     comment: (
       <Text>
-        NASA Space Apps Challenge 2023 Yokohama 最優秀賞作品です。
+        NASA Space Apps Challenge 2023 横浜大会最優秀賞作品です。
         月面上の地震データを可視化するWebアプリで、Next.jsを用いて作成しました。
       </Text>
-      ),
+    ),
   },
   {
     title: "Library",

@@ -49,7 +49,7 @@ const Works = () => {
           base: "repeat(1, 1fr)",
           md: "repeat(3, 1fr)",
         }}
-        gap={2}
+        gap={4}
         alignItems="start"
       >
         {works.map((work, idx) => (
