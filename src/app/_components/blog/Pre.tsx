@@ -27,6 +27,7 @@ const Pre = ({ children, raw, ...props }: PreProps) => {
           right="0.5em"
           position="absolute"
           onClick={copyTextToClipboard}
+          className="copy-button"
         >
           {isCopied ? "Copied!" : "Copy"}
         </Button>
