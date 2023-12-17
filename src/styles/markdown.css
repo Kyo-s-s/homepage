@@ -16,6 +16,14 @@ pre {
   border-radius: 4px;
 }
 
+pre .copy-button {
+  visibility: hidden;
+}
+
+pre:hover .copy-button {
+  visibility: visible;
+}
+
 blockquote {
   margin: 0.5em 0em;
   padding: 0.5em;
