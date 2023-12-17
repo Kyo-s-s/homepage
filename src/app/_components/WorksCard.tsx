@@ -13,19 +13,9 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { work } from "../_data/works";
 
-const WorksCard = ({
-  work,
-}: {
-  work: {
-    title: string;
-    link?: string;
-    img: string;
-    comment: ReactNode;
-    details?: ReactNode;
-  };
-}) => {
+const WorksCard = ({ work }: { work: work }) => {
   const { title, link, img, comment, details } = work;
   const { isOpen, onOpen, onClose } = useDisclosure();
 

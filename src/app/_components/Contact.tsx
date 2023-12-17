@@ -1,13 +1,8 @@
 import { Box, Flex, Grid, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import HomeCard from "./HomeCard";
-import { contacts } from "../_data/contacts";
-import { IconType } from "react-icons";
+import { contact, contacts } from "../_data/contacts";
 
-const Item = ({
-  contact,
-}: {
-  contact: { platform: string; username: string; url: string; icon: IconType };
-}) => {
+const Item = ({ contact }: { contact: contact }) => {
   const { platform, username, url } = contact;
   return (
     <LinkBox>
