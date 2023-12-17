@@ -1,6 +1,14 @@
+import { IconType } from "react-icons";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 
-export const contacts = [
+export type contact = {
+  platform: string;
+  username: string;
+  url: string;
+  icon: IconType;
+};
+
+export const contacts: contact[] = [
   {
     platform: "GitHub",
     username: "Kyo-s-s",

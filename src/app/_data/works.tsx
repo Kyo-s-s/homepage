@@ -1,5 +1,13 @@
 import { Text } from "@chakra-ui/react";
 
+export type work = {
+  title: string;
+  link?: string;
+  img: string;
+  comment: JSX.Element;
+  details?: JSX.Element;
+};
+
 export const works = [
   {
     title: "Moonquake Viewer",

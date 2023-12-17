@@ -1,13 +1,9 @@
 import { Box, Link, ListItem, UnorderedList } from "@chakra-ui/react";
 import HomeCard from "./HomeCard";
-import { affiliations } from "../_data/affiliations";
+import { affiliation, affiliations } from "../_data/affiliations";
 import { ReactNode } from "react";
 
-const Item = ({
-  affiliation,
-}: {
-  affiliation: { title: string; url?: string; details?: ReactNode };
-}) => {
+const Item = ({ affiliation }: { affiliation: affiliation }) => {
   const { title, url, details } = affiliation;
   const linkTitle = url ? <Link href={url}>{title}</Link> : title;
   return (

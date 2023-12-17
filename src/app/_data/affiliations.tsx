@@ -1,6 +1,12 @@
 import { Link, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 
-export const affiliations = [
+export type affiliation = {
+  title: string;
+  url?: string;
+  details?: JSX.Element;
+};
+
+export const affiliations: affiliation[] = [
   {
     title: "芝浦工業大学 システム理工学部 数理科学科 3年",
     url: "https://www.mathsci.shibaura-it.ac.jp",
