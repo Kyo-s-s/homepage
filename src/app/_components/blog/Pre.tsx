@@ -1,7 +1,8 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
-import { Box, Button } from "@chakra-ui/react";
+import { Box, IconButton } from "@chakra-ui/react";
+import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 
 interface PreProps {
   children: ReactNode;
@@ -21,16 +22,24 @@ const Pre = ({ children, raw, ...props }: PreProps) => {
   return (
     <Box position="relative">
       <Box as="pre" {...props}>
-        <Button
-          size="sm"
+        <IconButton
+          aria-label="code copy"
           top="0.5em"
           right="0.5em"
           position="absolute"
           onClick={copyTextToClipboard}
           className="copy-button"
-        >
-          {isCopied ? "Copied!" : "Copy"}
-        </Button>
+          border="none"
+          bg="transparent"
+          _hover={{ bg: "transparent" }}
+          icon={
+            isCopied ? (
+              <CheckIcon color="#f7fcfe" />
+            ) : (
+              <CopyIcon color="#f7fcfe" />
+            )
+          }
+        />
         {children}
       </Box>
     </Box>
