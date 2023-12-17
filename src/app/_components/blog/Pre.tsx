@@ -24,8 +24,8 @@ const Pre = ({ children, raw, ...props }: PreProps) => {
       <Box as="pre" {...props}>
         <IconButton
           aria-label="code copy"
-          top="0.5em"
-          right="0.5em"
+          top="0.2em"
+          right="0.2em"
           position="absolute"
           onClick={copyTextToClipboard}
           className="copy-button"
