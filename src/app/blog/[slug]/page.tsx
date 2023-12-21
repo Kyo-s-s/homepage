@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Pre from "@/app/_components/blog/Pre";
 import LinkHeading from "@/app/_components/blog/LinkHeading";
 import "../../../styles/markdown.css";
+import { BlogTags } from "@/app/_components/blog/BlogTags";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -33,6 +34,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <Box p={4}>
       <Container maxW="800px">
+        <BlogTags tags={post.tags} />
         <MDXContent components={components} />
       </Container>
     </Box>
