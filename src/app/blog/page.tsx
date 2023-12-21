@@ -1,19 +1,7 @@
-import { compareDesc, format, parseISO } from "date-fns";
-import { allPosts, Post } from "contentlayer/generated";
-import { Box, Container, Heading, Link, Text } from "@chakra-ui/react";
-import { BlogTags } from "../_components/blog/BlogTags";
-
-const PostCard = (post: Post) => {
-  return (
-    <Box py={2}>
-      <Heading as="h3" size="lg">
-        <Link href={post.url}>{post.title}</Link>
-      </Heading>
-      <BlogTags tags={post.tags} />
-      <Text>{format(parseISO(post.date), "LLLL d, yyyy")}</Text>
-    </Box>
-  );
-};
+import { compareDesc } from "date-fns";
+import { allPosts } from "contentlayer/generated";
+import { Container } from "@chakra-ui/react";
+import { TableOfContents } from "../_components/blog/TableOfContents";
 
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
@@ -22,9 +10,7 @@ export default function Home() {
 
   return (
     <Container maxW="800px">
-      {posts.map((post, idx) => (
-        <PostCard key={idx} {...post} />
-      ))}
+      <TableOfContents posts={posts} />
     </Container>
   );
 }
