@@ -1,10 +1,11 @@
 "use client";
 
 import { format, parseISO } from "date-fns";
-import { Box, Button, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Editable, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { Post } from "contentlayer/generated";
-import { BlogTags } from "./BlogTags";
 import { useSearchParams } from "next/navigation";
+import { BlogTags } from "./BlogTags";
+import { BlogTag } from "./BlogTag";
 
 const PostCard = (post: Post) => {
   return (
@@ -18,14 +19,32 @@ const PostCard = (post: Post) => {
   );
 };
 
+const SearchBox = ({ tag }: { tag: string | null }) => {
+  if (tag == null) {
+    return <></>;
+  }
+  return (
+    <Editable>
+      <Flex>
+        <Text pr={2}>Search:</Text>
+        <BlogTag tag={tag} closeable />
+      </Flex>
+    </Editable>
+  );
+};
+
 export const TableOfContents = ({ posts }: { posts: Post[] }) => {
   const searchParams = useSearchParams();
   const tag = searchParams.get("tag");
+
   return (
     <>
-      {posts.map((post, idx) => (
-        <PostCard key={idx} {...post} />
-      ))}
+      <SearchBox tag={tag} />
+      {posts
+        .filter((post) => tag == null || post.tags?.includes(tag))
+        .map((post, idx) => (
+          <PostCard key={idx} {...post} />
+        ))}
     </>
   );
 };
